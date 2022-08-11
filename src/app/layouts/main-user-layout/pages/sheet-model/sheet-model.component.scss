@@ -1,0 +1,47 @@
+
+// Scroll Bars
+.e-scrollbar {
+  &::-webkit-scrollbar-thumb {
+    background: #921831;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar {
+      height: 8px;
+      background: #92183155;
+      border-radius: 0px;
+  }
+}
+
+.e-spreadsheet .e-cell {
+  background-color: var(--bg1) !important;
+  color: var(--color1) !important;
+  border-color: var(--bg2) !important;
+  font-size: 12px !important;
+  font-weight: 200 !important;
+}
+.e-spreadsheet .e-active-cell {
+  border-color: #0000FF;
+  background-color: transparent !important;
+  color: var(--color1) !important;
+}
+
+.e-spreadsheet .e-autofill {
+  background-color: green;
+  border: 1px solid #fff;
+  cursor: crosshair;
+  height: 8px;
+  position: absolute;
+  width: 8px;
+  z-index: 3;
+}
+.e-selection {
+  background-color: transparent !important;
+  border-color: yellow !important;
+}
+.e-spreadsheet-edit {
+  border-color: orange !important;
+  background-color: var(--bg1) !important;
+  color: var(--color1) !important;
+  text-align: right !important;
+}

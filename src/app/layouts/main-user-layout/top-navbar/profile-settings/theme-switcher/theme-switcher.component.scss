@@ -1,0 +1,403 @@
+.themes-wrapper {
+  // width: 100%;
+  // height: auto;
+  // padding: 25px 20px;
+  // color: var(--main-color);
+}
+
+.title-block {
+  display: flex;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 10px;
+  .theme-category {
+    color: var(--main-color);
+    font-size: 13px;
+    line-height: 1;
+    font-weight: 500;
+    flex-basis: 50%;
+    // padding-left: 8px;
+    max-width: 350px;
+    text-transform: capitalize;
+    &:first-child {
+      padding-left: 0;
+    }
+
+    span {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1;
+      // margin-left: 10px;
+    }
+
+    &.flex {
+      display: flex;
+      flex-basis: 100%;
+      max-width: 100%;
+      span {
+        flex-basis: 50%;
+        &:last-child {
+          margin-left: 25px;
+        }
+      }
+    }
+  }
+}
+
+.theme-group {
+  width: 100%;
+  border-radius: 6px;
+  // border: 1px solid var(--dropdown-border);
+  background-color: var(--bottom-nav-bg);
+  padding: 30px;
+  margin-bottom: 25px;
+  color: var(--main-color);
+}
+.theme-switcher-form {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.pp {
+  &__form-field {
+    display: flex;
+    align-items: flex-start;
+
+    width: 100%;
+    margin-bottom: 16px;
+    &.dark {
+      // margin-top: 120px;
+      // margin-bottom: 120px;
+    }
+  }
+
+  &__form-label-box {
+    flex-basis: 40%;
+    padding-right: 15px;
+  }
+
+  &__form-label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+
+    margin-bottom: 5px;
+    padding-top: 3px;
+  }
+  &__form-select-wrapper {
+    // flex-basis: 60%;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    // overflow: hidden;
+
+    cursor: pointer;
+
+    background-color: var(--main-area-bg);
+    // background-color: var(--top-bar-bg);
+    // background-color: transparent;
+    // border: 1px solid var(--input-bg);
+
+    border-radius: 0 0 6px 6px;
+    height: 32px;
+
+    transition: all 250ms ease-in-out;
+
+    position: relative;
+
+    &:hover,
+    &:focus {
+      // border: 1px solid var(--focus-input-border-color);
+      // cursor: pointer;
+      // outline: none;
+    }
+  }
+  &__select-arrow-pointer {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    display: block;
+    pointer-events: none;
+    i {
+      display: block;
+      font-size: 8px;
+      line-height: 1;
+      color: var(--main-color);
+    }
+  }
+
+  &__form-select-btn {
+    height: 100%;
+    width: 100%;
+    padding: 0 12px;
+    background-color: transparent !important;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    text-align: left;
+    color: var(--main-color);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+
+    // border: 1px solid var(--input-bg);
+    // border: 1px solid transparent;
+    // border: 1px solid var(--dropdown-border);
+    border-top: none;
+
+    border-radius: 0 0 6px 6px;
+    transition: all 250ms ease-in-out;
+    &:hover,
+    &:focus {
+      box-shadow: none;
+
+      // border: 1px solid var(--focus-input-border-color);
+      cursor: pointer;
+      outline: none;
+    }
+  }
+
+  &__select-menu {
+    width: 101%;
+    max-height: 250px;
+    overflow-y: auto;
+
+    left: 50% !important;
+    transform: translate3d(-50%, 175px, 0px) !important;
+
+    background: var(--dropdown-bg) !important;
+    color: var(--topbar-color);
+
+    &:hover::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    &::-webkit-scrollbar {
+      width: 10px;
+      background: transparent;
+      border-radius: 0px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: transparent;
+      border-radius: 0px;
+      min-height: 50px;
+    }
+
+    &.menu-dropup {
+      transform: translate3d(-50%, -36px, 0px) !important;
+    }
+  }
+
+  &__select-item {
+    color: var(--topbar-color);
+    cursor: pointer;
+    height: 28px;
+    line-height: 18px;
+    padding: 5px 20px;
+    font-size: 13px;
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+    &:hover {
+      // background: var(--dropdown-item-hover-bg);
+      background: var(--tab-item-bg);
+      color: var(--main-color);
+    }
+    i {
+      margin-right: 10px;
+    }
+    &::before {
+      display: block;
+      content: "";
+      width: 16px;
+      height: 16px;
+      margin-right: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--placeholder-color);
+      transition: border 400ms;
+    }
+    &.activeItem {
+      &::before {
+        border: 5px solid #1a8cff;
+      }
+    }
+
+    // &:first-child {
+    //   padding-bottom: 10px;
+    //   margin-bottom: 5px;
+    //   border-bottom: 1px solid var(--input-bg);
+    //   &::before {
+    //     display: none;
+    //   }
+    //   &:hover {
+    //     background: transparent;
+    //     color: var(--topbar-color);
+    //     cursor: auto;
+    //   }
+    // }
+  }
+}
+
+// ================== Styles for Previous version of theme switcher =====================
+
+.theme-items-flex-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 28px;
+}
+.theme-item {
+  flex-basis: calc(100% / 2 - 28px / 2);
+}
+
+// .themes-columns {
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   .theme-pairs-box {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+.theme-card {
+  // width: 340px !important;
+  width: 100%;
+  height: 140px !important;
+  border-radius: 6px 6px 0 0;
+  padding: 0;
+  // overflow: hidden;
+  transition: 0.1s;
+  cursor: pointer;
+  background-color: var(--top-bar-bg);
+  transition: background-color 300ms;
+  position: relative;
+  .c-window {
+    width: 80%;
+    height: 80%;
+
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+
+    border-radius: 6px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    .c-header {
+      flex-basis: 30%;
+      background-color: var(--tabs-bar-bg);
+      transition: background-color 300ms;
+      position: relative;
+      .c-text {
+        height: 8px;
+        border-radius: 4px;
+        width: 65%;
+
+        position: absolute;
+        top: 14px;
+        left: 10px;
+
+        background-color: var(--main-color);
+        transition: background-color 300ms;
+      }
+    }
+    .c-body {
+      flex-basis: 70%;
+      background-color: var(--main-area-bg);
+      transition: background-color 300ms;
+    }
+  }
+}
+.c-checkbox {
+  height: 50px;
+  width: 100%;
+  border-radius: 0 0 6px 6px;
+  background-color: var(--left-sidebar-bg);
+  border-top: 1px solid var(--dropdown-border);
+  // padding: 0 10px;
+  line-height: 40px;
+  // color: var(--main-color);
+  color: inherit;
+  cursor: pointer;
+  .f-wrap {
+    margin-bottom: 0;
+  }
+  .form-check-input {
+    cursor: pointer;
+    margin-top: 12px !important;
+    box-shadow: none;
+    &:checked + .form-check-input-label::before {
+      border: 6px solid #1a8cff;
+    }
+  }
+  .form-check-input-label {
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    cursor: pointer;
+    &::before {
+      display: block;
+      content: "";
+      width: 17px;
+      height: 17px;
+      margin-right: 10px;
+      border-radius: 50%;
+      border: 2px solid var(--placeholder-color);
+      // transition: border 100ms 100ms;
+      transition: 50ms ease-in-out;
+    }
+  }
+}
+//   }
+// }
+
+.form-check-label {
+  cursor: pointer;
+  display: block;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid var(--dropdown-border);
+  transition: 250ms ease-in-out;
+}
+.theme-switcher-btn {
+  width: 100%;
+  cursor: pointer;
+  display: block;
+  border-radius: 6px;
+  // border: 1px solid var(--dropdown-border);
+  border: none;
+  transition: 250ms ease-in-out;
+
+  outline: none;
+  box-shadow: none;
+  background-color: transparent;
+}
+.activeTheme {
+  // border: 1px solid var(--splitter-background-hover);
+  box-shadow: 0 0 0 1px var(--splitter-background-hover);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
